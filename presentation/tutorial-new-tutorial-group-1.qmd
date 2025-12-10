@@ -74,31 +74,67 @@ format:
 
 ## Few Shot Learning in General
 
-tbd
+### Few-Shot Learning (FSL)
+- Learning new **tasks, labels, or segmentations** from very few labeled examples
+  *(N-way, K-shot)*
+- **Motivation**:
+  - Data scarcity
+  - Expensive and time-consuming annotation
+
+### Few-Shot Semantic Segmentation (FSSS)
+- **Goal**: Segment novel object classes using only a few annotated examples
+- Assigning a class label to **every pixel**
+
+
+---
+
+### Prototypical Networks (ProtNets)
+- Learn a shared **embedding space**
+- Pixels belonging to the same class are **close in feature space**
+- Class representations are formed as **prototypes**
+- Training follows an **episodic framework**
+- Each episode consists of:
+  - **Support set**:
+    - Few images with **pixel-level masks**
+    - Defines the target classes
+  - **Query image**:
+    - Image where the model must segment the target classes
 
 
 
-## Prototypical Network
 
+
+
+
+## Prototypical Network Overview
+
+### Workflow
+- Support Image → Prototype → Similarity → Query Segmentation
+
+
+### Feature Extraction
+- **Backbone:** ResNet-18 CNN, pretrained on ImageNet
+- **Projection:** feature maps → embedding dimension (256 channels)
+
+
+### Evaluation Metric
+$$
+\mathrm{IoU} = \frac{|A \cap B|}{|A \cup B|}
+$$
+
+
+---
+
+## Prototypical Network Overview
+
+::: {#fig-protnet fig-align="center"}
 ![](figures/illustration_prototypical_network.png){width=100%}
 
-(modified figure from paper) [SRPNet](https://arxiv.org/abs/2210.16829)
-
-- high-level schematic (support → prototype → similarity → segmentation)
-
-- 1-way-1 shot --> explain what it means
-
-- Data Preprocessing (e.g. Augementation, Geographic Splits)
-
-- Model Architecture (feature Exctraction, CNN --> Number of Layers, Backbone)
-
-- Training strategy
-
-  - Loss function
-
-  - Evaluation metrics
+*(Modified figure from* [SRPNet](https://arxiv.org/abs/2210.16829)*)*
+:::
 
 
+---
 
 ## (Preliminary) Results
 
@@ -110,23 +146,27 @@ tbd
 
 ## Wrap-Up/ Discussion
 
+**What we still want to work on**:
+
+- Testing different kind of pretrained models as our encoder (ResNet-50, ResNet pretrained on satellite images)
+
+- Play around with different distance metrics (Cosine Similarity and Fidelity)
+
+- Evaluate different K values and see how they perform
+
+
+**Discussion and Key Takeaways**
+
+- Strong 1-shot performance: even with minimal labeled data, results were impressive
+
+- Dataset brought its own challenges (designed primarily for PV assessment, not general segmentation)
+
+- Limited scope: focused only on roofs in Geneva → raises questions of generalizability
+
+- More diverse data or complex models could improve performance
+
+
 [GitHub Repo](https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1/tree/main)
-
-
-**What we still need to finalize**:
-
-- insert bullet point here
-
-- insert bullet point here
-
-
-**Questions to discuss in class/ lynn**
-
-- strengths
-
-- weaknesses
-
-- failure cases (shadows, tiny rooftops)
 
 
 
