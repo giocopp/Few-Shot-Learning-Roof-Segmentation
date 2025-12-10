@@ -354,3 +354,15 @@ $presentation-h3-font-size: 1.3em;
     flex: 1 1 100%;
   }
 }
+
+/* Make references tiny */
+.refs-super-small {
+  font-size: 0.6em !important;
+  line-height: 1.1em !important;
+}
+
+/* Reduce bullet spacing further */
+.refs-super-small li {
+  margin-bottom: 0.15em !important;
+}
+
