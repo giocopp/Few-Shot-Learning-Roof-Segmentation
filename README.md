@@ -85,9 +85,9 @@ Either have a quick walk through the tutorial notebook or watch the video tutori
 
 ### 📓 Tutorial Notebook
 
-**[View Tutorial Notebook (HTML)](tutorial.html)**
-**[View Tutorial Notebook (ipynb)](tutorial.ipynb)**
-**[View Tutorial Notebook in Colab](https://colab.research.google.com/github/hertie-data-science-lab/tutorial-new-tutorial-group-1/blob/main/tutorial.ipynb)**
+**[View Tutorial Notebook (HTML)](tutorial.html)**  
+**[View Tutorial Notebook (ipynb)](tutorial.ipynb)**  
+**[View Tutorial Notebook in Colab](https://colab.research.google.com/github/hertie-data-science-lab/tutorial-new-tutorial-group-1/blob/main/tutorial.ipynb)**  
 
 ### 📹 Video Tutorial
 
