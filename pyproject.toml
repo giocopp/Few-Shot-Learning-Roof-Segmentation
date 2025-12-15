@@ -44,14 +44,12 @@ torch = [
 ]
 
 [project.urls]
-Documentation = "https://elenaivadreyer.github.io/tutorial-group-1/"
+Documentation = "https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1/docs"
 Source = "https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1"
 Tracker = "https://github.com/hertie-data-science-lab/tutorial-new-tutorial-group-1/issues"
 
 #Global ruff configuration
 [tool.ruff]
-
-#global exlusions as defined in original template version
 exclude = [
     ".git",
     ".hg",
@@ -72,71 +70,63 @@ exclude = [
     "out",
     "packages",
     "pywin32",
-    "swagger_client"
+    "swagger_client",
 ]
-
-
-# Line length configuration
 line-length = 120
 
-# Ruff linting configuration
 [tool.ruff.lint]
 select = [
-    "E",      # Pycodestyle errors (PEP8 style)
-    "F",      # Pyflakes (code errors and issues)
-    "W",      # Pycodestyle warnings
-    "I",      # Import sorting (isort replacement)
-    "D",      # Pydocstyle (PEP257 docstring conventions)
-    "ANN",    # flake8-annotations (function type annotations)
-    "UP",     # Pyupgrade (modern Python syntax)
-    "B",      # flake8-bugbear (likely bugs)
-    "S",      # Security checks (bandit replacement)
-    "N",      # Naming conventions (PEP8)
-    "PL",     # Pylint rules
+    "E",   # pycodestyle errors
+    "F",   # pyflakes
+    "W",   # pycodestyle warnings (includes W293)
+    "I",   # isort
+    "D",   # pydocstyle
+    "ANN", # flake8-annotations
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "S",   # bandit
+    "N",   # pep8-naming
+    "PL",  # pylint
 ]
-
 ignore = [
-    # Docstring requirements - relaxed for flexibility
+    # Docstrings: relaxed
     "D100", "D101", "D102", "D103", "D104", "D105", "D106", "D107",
 
-    # Docstring formatting - avoid conflicts
-    "D211",   # Conflicts with D203
-    "D212",   # Conflicts with D213
-
-    # Style preferences
-    "COM812", # Conflicts with formatter
-    "D203",   # Conflicts with formatter
+    # Conflicts / formatting preferences
+    "D211",
+    "D212",
+    "COM812",
+    "D203",
 ]
 
 # Allow underscore-prefixed unused variables
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 
-# Per-file exceptions
 [tool.ruff.lint.per-file-ignores]
-"scripts/*" = ["S"]  # Disable security checks in scripts
-
-# Jupyter notebooks - relaxed rules for exploratory work
+# Relax security checks in notebooks/tutorial code
 "*.ipynb" = [
-    "T201",    # Allow print statements
-    "ANN",     # No annotation requirements
-    "E501",    # Allow long lines
-    "F401",    # Allow unused imports
-    "I001",    # Relaxed import sorting
-    "PLC0415", # Allow imports outside top-level
-    "PLR0913", # Allow many function arguments
-    "S105",    # Allow hardcoded passwords (often placeholder values in tutorials)
+    "T201",    # allow print
+    "ANN",     # no type annotation requirements
+    "E501",    # allow long lines
+    "E402",    # allow imports not at top of file
+    "I001",    # relaxed import sorting
+    "PLC0415", # allow imports outside top-level
+    "PLR0913", # allow many function args
+    "S105",    # allow "password" strings (tutorial placeholders)
+    "PLR2004", # allow magic values
+    "N803",    # allow capitalized variable names
+    "N806",    # allow single-letter variable names
+    "N812",    # allow lowercase class names
+    "S",       # skip all bandit checks
+    "D400",    # summary line position
+    "D401",    # first line should be in imperative mood
+    "PLR0915", # allow complex functions
+    "B006",   # allow use of mutable defaults
 ]
 
-# Training/evaluation modules
-"src/few_shot_utils/train.py" = ["T201", "PLR0913"]
-"src/few_shot_utils/evaluate.py" = ["T201"]
-"src/few_shot_utils/models.py" = ["PLC0415"]
-
-# Import sorting configuration
 [tool.ruff.lint.isort]
 split-on-trailing-comma = true
 
-# Pylint-compatible settings
 [tool.ruff.lint.pylint]
 max-args = 5
 max-branches = 12
@@ -144,7 +134,6 @@ max-locals = 15
 max-returns = 6
 max-statements = 50
 
-# Ruff formatter (Black replacement)
 [tool.ruff.format]
 quote-style = "double"
 indent-style = "space"

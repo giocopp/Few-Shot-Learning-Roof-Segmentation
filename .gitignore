@@ -151,14 +151,8 @@ dmypy.json
 
 # Cython debug symbols
 cython_debug/
-data/
 
 .DS_Store
 
-# Exclude not needed notebooks files
-#notebooks/exploration.ipynb
-notebooks/class_template.ipynb
-notebooks/few_shot_approaches_setup.ipynb
-
-presentation/tutorial-new-tutorial-group-1-NARRATIVE.html
-presentation/figures/tutorial-new-tutorial-group-1-NARRATIVE.ipynb
+# Exclude entire notebooks folder
+notebooks/

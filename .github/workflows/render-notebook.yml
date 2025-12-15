@@ -5,12 +5,12 @@ on:
     branches:
       - main
     paths:
-      - 'notebooks/tutorial_few_shot_learning.ipynb'
+      - 'tutorial.ipynb'
   pull_request:
     branches:
       - main
     paths:
-      - 'notebooks/tutorial_few_shot_learning.ipynb'
+      - 'tutorial.ipynb'
   workflow_dispatch:
 
 permissions:
@@ -38,7 +38,7 @@ jobs:
         run: |
           jupyter nbconvert \
             --to html \
-            notebooks/tutorial_few_shot_learning.ipynb \
+            tutorial.ipynb \
             --output tutorial_few_shot_learning.html \
             --output-dir docs/
 
