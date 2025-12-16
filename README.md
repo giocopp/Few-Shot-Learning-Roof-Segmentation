@@ -81,9 +81,7 @@ The dataset being used for the demonstration of this tutorial consists of:
 Either start by watching the video tutorial or jump straight into running the tutorial notebook.
 
 ### 📹 Video Tutorial
-
-<!-- VIDEO PLACEHOLDER: Replace the link below with your tutorial video -->
-[![Tutorial Video](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+[![Few-Shot Rooftop Segmentation Tutorial](https://img.youtube.com/vi/A2tdG-8Qqm4/0.jpg)](https://youtu.be/A2tdG-8Qqm4)
 
 *Click the image above to watch the tutorial video*
 
